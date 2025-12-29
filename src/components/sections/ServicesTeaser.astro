@@ -1,0 +1,23 @@
+---
+const items = [
+  { title: "تعمیر لپ‌تاپ ایسوس", desc: "مشکلات روشن نشدن، تصویر، شارژ، کندی و ...", href: "#services" },
+  { title: "تعمیر تبلت و موبایل", desc: "تعویض باتری، صفحه، سوکت شارژ و ...", href: "#services" },
+  { title: "تعمیر مانیتور ایسوس", desc: "تصویر، بک‌لایت، پیکسل سوخته و ...", href: "#services" },
+];
+---
+<section class="mt-10">
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="text-xl font-bold md:text-2xl">خدمات تعمیرات ایسوس</h2>
+    <a class="text-sm text-emerald-300 hover:text-emerald-200 transition" href="/services">رفتن به صفحه خدمات</a>
+  </div>
+
+  <div class="mt-5 grid gap-4 md:grid-cols-3">
+    {items.map((it) => (
+      <a href={it.href} class="group rounded-3xl border border-white/10 bg-white/5 p-5 hover:bg-white/7 transition">
+        <div class="text-base font-semibold">{it.title}</div>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">{it.desc}</p>
+        <div class="mt-4 text-sm text-emerald-300 group-hover:text-emerald-200 transition">مشاهده جزئیات ↓</div>
+      </a>
+    ))}
+  </div>
+</section>

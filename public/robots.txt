@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asus-repairer.ir/sitemap-index.xml

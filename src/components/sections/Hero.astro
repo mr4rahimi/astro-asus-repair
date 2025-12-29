@@ -1,0 +1,59 @@
+---
+import { SITE } from "../../config/site";
+---
+<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-6 md:p-10">
+  <div class="absolute inset-0 -z-10 opacity-60 [background:radial-gradient(650px_circle_at_80%_20%,rgba(16,185,129,.35),transparent_55%),radial-gradient(700px_circle_at_10%_30%,rgba(59,130,246,.25),transparent_55%)]"></div>
+
+  <div class="grid items-center gap-10 md:grid-cols-2">
+    <div>
+      <p class="text-sm text-slate-300">تعمیرات تخصصی ASUS در تهران</p>
+      <h1 class="mt-3 text-2xl font-extrabold leading-tight md:text-4xl">
+        نمایندگی تعمیرات ایسوس
+      </h1>
+      <p class="mt-4 text-slate-200/90 leading-relaxed">
+        تعمیر لپ‌تاپ، تبلت، موبایل و مانیتور ایسوس با قطعات اورجینال، تحویل سریع و گارانتی کتبی.
+      </p>
+
+      <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+        <a class="rounded-2xl bg-sky-700 px-5 py-3 text-center font-semibold text-slate-950 hover:bg-emerald-400 transition"
+           href="/contact">
+          ثبت سفارش و تماس
+        </a>
+        <a class="rounded-2xl border border-white/15 px-5 py-3 text-center font-semibold text-white hover:border-white/30 transition"
+           href="#services">
+          مشاهده خدمات
+        </a>
+      </div>
+
+      <div class="mt-6 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div class="text-sm font-semibold">پیک رایگان</div>
+          <div class="mt-1 text-xs text-slate-300">ارسال و دریافت در تمامی مناطق تهران</div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div class="text-sm font-semibold">شفافیت هزینه</div>
+          <div class="mt-1 text-xs text-slate-300">اعلام هزینه قبل از تعمیر</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <div class="text-sm font-semibold">راه‌های سریع تماس</div>
+      <div class="mt-4 grid gap-3">
+        <a class="rounded-2xl bg-white/10 px-4 py-3 hover:bg-white/15 transition" href={`tel:${SITE.phone}`}>
+          تماس: {SITE.phoneDisplay}
+        </a>
+        <a class="rounded-2xl bg-white/10 px-4 py-3 hover:bg-white/15 transition" href={SITE.whatsapp}>
+          واتساپ
+        </a>
+        <a class="rounded-2xl bg-white/10 px-4 py-3 hover:bg-white/15 transition" href="/contact">
+          آدرس شعب و فرم تماس
+        </a>
+      </div>
+
+      <div class="mt-6 text-xs text-slate-400">
+        * زمان پاسخگویی سریع در ساعات کاری
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { SITE } from "../../config/site";
+---
+<section class="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+  <h2 class="text-xl font-bold md:text-2xl">نقاط تحت پوشش</h2>
+
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-5">
+      <div class="font-semibold">پیک رایگان</div>
+      <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+تنها با یک تماس میتوانید از خدمات پیک رایگان دریافت و ارسال دستگاه ایسر خود برای تعمیرات استفاده نمایید. اگر ساکن تهران هستید و امکان مراجعه حضوری به نمایندگی تعمیرات ایسر را ندارید تنها کافی استتماس بگیرید تا پیک مجموعه ما در سریع ترین زمان ممکن برای تحویل دستگاه ایسر نزد شما مراجعه کند.      </p>
+
+     <div class="font-semibold">شعب حضوری</div>
+      <ul class="mt-2 space-y-2 text-sm text-slate-300">
+        <li>آدرس نمایندگی مرکزی: تهران، خیابان مطهری، ابتدای خیابان قائم مقام فراهانی جنوبی، پلاک 158، ساختمان برتر سرویس</li>
+        <li>آدرس نمایندگی غرب: تهران، سعادت آباد، میدان کاج، کوچه دوازدهم علی اکبر، پلاک 30، مجتمع اداری کسری، طبقه اول واحد 5</li>
+      </ul>
+
+    <img
+  src="/asus-p.webp"
+  alt="نمایندگی تعمیرات ایسوس"
+  width="400"
+  height="400"
+  loading="eager"
+  decoding="async"
+  class="h-400 w-400 rounded-2xl object-contain bg-white/10 p-1"
+/>
+    </div>
+
+    <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-5">
+      <div class="font-semibold">مناطق سرویس‌دهی</div>
+      <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+        {SITE.areasServed.join("، ")}
+      </p>
+    </div>
+  </div>
+</section>

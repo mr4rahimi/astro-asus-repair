@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site";
+
+const title = "درباره ما";
+const description =
+  "نمایندگی تعمیرات ایسوس در تهران با تمرکز بر سرعت، کیفیت، قطعات اورجینال، اعلام هزینه قبل از تعمیر و گارانتی کتبی.";
+
+const canonical = SITE.url + "/about";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: title,
+    url: canonical,
+    inLanguage: SITE.locale,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone,
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <h1 class="text-2xl font-extrabold md:text-4xl">درباره نمایندگی تعمیرات ایسوس</h1>
+    <p class="mt-4 text-slate-300 leading-relaxed">
+      هدف ما ارائه خدمات تعمیرات تخصصی ASUS با کیفیت بالا، زمان تحویل سریع و قیمت‌گذاری منصفانه است.
+      تمامی تعمیرات پس از عیب‌یابی دقیق انجام می‌شود و پیش از شروع کار، هزینه به شما اعلام خواهد شد.
+    </p>
+    <p class="mt-4 text-slate-300 leading-relaxed">
+        نمایندگی تعمیرات ایسوس با بهره مندی از برترین مهندسین و متخصصین تعمیرات و با بهره گیری از سال ها تجربه در امر تعمیرات سخت افزار و همچنین با برخورداری از بروزترین تجهیزات الکترونیکی، کلیه تعمیرات سخت افزاری محصولات ایسوس را با قطعات اورجینال و مناسب ترین هزینه به مشتریان عزیز ارائه می دهد. وجه تمایز نمایندگی تعمیرات ایسوس را میتوان قابل اطمینان بودن آن دانست، زیرا همواره اعتماد و اطمینان به یک مجموعه، موجب آسودگی خیال مشتریان به آن مجموعه میشود.
+    </p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <div class="font-semibold">شفافیت</div>
+        <p class="mt-2 text-sm text-slate-300">اعلام هزینه قبل از تعمیر و توضیح کامل فرآیند.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <div class="font-semibold">کیفیت</div>
+        <p class="mt-2 text-sm text-slate-300">استفاده از قطعات اورجینال و تست نهایی.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <div class="font-semibold">گارانتی</div>
+        <p class="mt-2 text-sm text-slate-300">تحویل همراه با گارانتی کتبی معتبر.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

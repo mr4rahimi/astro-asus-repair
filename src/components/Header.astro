@@ -1,0 +1,65 @@
+---
+import { NAV, SITE } from "../config/site";
+---
+<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <a href="/" class="flex items-center gap-2">
+      <img
+  src="/asus-logo.webp"
+  alt="نمایندگی تعمیرات ایسوس"
+  width="36"
+  height="36"
+  loading="eager"
+  decoding="async"
+  class="h-9 w-9 rounded-2xl object-contain bg-white/10 p-1"
+/>
+      <div class="leading-tight">
+        <div class="text-sm font-semibold">{SITE.name}</div>
+        <div class="text-xs text-slate-300">تعمیرات تخصصی ASUS در تهران</div>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      {NAV.map((item) => (
+        <a href={item.href} class="text-sm text-slate-200 hover:text-white transition">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        class="rounded-xl bg-sky-700 px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-950 transition"
+        href="tel:02191300348"
+      >
+        تماس فوری
+      </a>
+      <a
+        class="hidden rounded-xl border border-white/15 px-3 py-2 text-sm text-slate-100 hover:border-white/30 transition md:inline-flex"
+        href="/services"
+      >
+        خدمات
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+<div class="mx-auto max-w-6xl px-4 pb-3 md:hidden">
+  <nav class="flex justify-center">
+    <ul class="flex max-w-full items-center gap-2 overflow-x-auto overflow-y-hidden whitespace-nowrap py-1 [-webkit-overflow-scrolling:touch]">
+      {NAV.map((item) => (
+        <li class="shrink-0">
+          <a
+            href={item.href}
+            class="inline-flex items-center justify-center rounded-xl border border-white/10 px-4 py-2 text-sm text-slate-200 hover:border-white/25 transition"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
+
+
+</header>

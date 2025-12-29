@@ -1,0 +1,50 @@
+---
+const reviews = [
+  { name: "مهدی", text: "پیک فوری اومد لپتاپ رو تحویل گرفت و همون روز تعمیر شد. واقعا حرفه ای." },
+  { name: "سارا", text: "قبل از تعمیر هزینه دقیق رو اعلام کردند و هیچ مبلغ اضافه ای نگرفتند." },
+  { name: "علی", text: "لپتاپ ایسوسم مشکل روشن نشدن داشت، کامل رفع شد و گارانتی هم دادند." },
+  { name: "رضا", text: "سرعت تعمیر خیلی بالا بود و کیفیت کار عالی. کاملا راضی هستم." },
+  { name: "نرگس", text: "برخورد پشتیبانی خیلی خوب بود و مرحله به مرحله منو در جریان گذاشتند." },
+  { name: "حسین", text: "برد لپتاپ مشکل داشت، تعمیر شد و الان مثل روز اول کار میکند." },
+  { name: "فاطمه", text: "هزینه تعمیر نسبت به جاهای دیگه خیلی مناسب تر بود." },
+  { name: "امیر", text: "پیک رایگان داشتند و تعمیر فوری انجام شد. واقعا وقت شناس هستند." },
+  { name: "محمد", text: "مشکل داغ کردن لپتاپ ایسوسم کامل برطرف شد و تست هم کردند." },
+  { name: "زهرا", text: "بعد از تعمیر هم پیگیری کردند که مشکلی نداشته باشه. این خیلی ارزشمنده." },
+  { name: "احسان", text: "قطعه معیوب رو تعویض کردند و فاکتور و ضمانت تحویل دادند." },
+  { name: "الهام", text: "کیفیت تعمیر عالی بود و اصلا احساس نمیکنم دستگاه قبلا مشکل داشته." },
+  { name: "سعید", text: "تعمیر لپتاپ ایسوس من کمتر از 24 ساعت انجام شد. عالی." },
+  { name: "مریم", text: "خیلی صادقانه راهنمایی کردند و الکی هزینه روی دستم نذاشتند." },
+  { name: "پویان", text: "هم سرعت هم کیفیت تعمیر بالا بود. قطعا پیشنهاد میکنم." }
+];
+
+---
+<section class="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+  <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+    <div>
+      <h2 class="text-xl font-bold md:text-2xl">نظرات کاربران</h2>
+      <p class="mt-1 text-sm text-slate-300">تجربه مشتریان از خدمات ما</p>
+    </div>
+
+    <!-- Optional hint -->
+    <div class="text-xs text-slate-400">برای دیدن نظرات بیشتر اسکرول کنید</div>
+  </div>
+
+  <div class="mt-5">
+    <div
+      class="no-scrollbar -mx-2 flex gap-4 overflow-x-auto overflow-y-hidden px-2 pb-2
+             snap-x snap-mandatory [-webkit-overflow-scrolling:touch]"
+      aria-label="لیست نظرات کاربران"
+    >
+      {reviews.map((r) => (
+        <figure
+          class="snap-start shrink-0 rounded-3xl border border-white/10 bg-slate-950/40 p-6
+                 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[32%]"
+        >
+          <blockquote class="text-sm text-slate-200 leading-relaxed">“{r.text}”</blockquote>
+          <figcaption class="mt-4 text-xs text-slate-400">— {r.name}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+

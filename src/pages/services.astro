@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site";
+
+const title = "خدمات تعمیرات ایسوس";
+const description =
+  "لیست خدمات تخصصی تعمیر لپ‌تاپ، تبلت، موبایل و مانیتور ایسوس در تهران. عیب‌یابی دقیق، اعلام هزینه قبل از تعمیر، گارانتی کتبی و پیک رایگان.";
+
+const canonical = SITE.url + "/services";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: canonical,
+    inLanguage: SITE.locale,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone,
+    areaServed: SITE.areasServed,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "خدمات تعمیرات ایسوس",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "تعمیر لپ‌تاپ ایسوس" },
+      { "@type": "ListItem", position: 2, name: "تعمیر تبلت و موبایل ایسوس" },
+      { "@type": "ListItem", position: 3, name: "تعمیر مانیتور ایسوس" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <h1 class="text-2xl font-extrabold md:text-4xl">خدمات تعمیرات ایسوس</h1>
+    <p class="mt-4 text-slate-300 leading-relaxed">
+      خدمات تخصصی نمایندگی تعمیرات ایسوس در تهران شامل عیب‌یابی دقیق، اعلام هزینه قبل از تعمیر، استفاده از قطعات اورجینال و تحویل با گارانتی کتبی است.
+    </p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <article class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <h2 class="text-lg font-bold">تعمیر لپ‌تاپ ایسوس</h2>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+          روشن نشدن، مشکل تصویر، شارژ و باتری، کندی، داغی، خرابی پورت‌ها، کیبورد و ... با تست کامل قبل از تحویل.
+        </p>
+      </article>
+
+      <article class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <h2 class="text-lg font-bold">تعمیر تبلت و موبایل ایسوس</h2>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+          تعویض باتری، صفحه نمایش، سوکت شارژ، مشکلات نرم‌افزاری و آب‌خوردگی با قطعات اصلی.
+        </p>
+      </article>
+
+      <article class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <h2 class="text-lg font-bold">تعمیر مانیتور ایسوس</h2>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+          بک‌لایت، مشکل تصویر، برد تغذیه، پیکسل سوخته و اتصالات. تحویل همراه با گارانتی.
+        </p>
+      </article>
+    </div>
+
+    <div class="mt-8">
+      <a class="inline-flex rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition" href="/contact">
+        مشاوره و ثبت سفارش
+      </a>
+    </div>
+  </section>
+</BaseLayout>

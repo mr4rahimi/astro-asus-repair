@@ -1,11 +1,93 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/sections/Hero.astro";
+import Features from "../components/sections/Features.astro";
+import ServicesTeaser from "../components/sections/ServicesTeaser.astro";
+import Coverage from "../components/sections/Coverage.astro";
+import RepairSteps from "../components/sections/RepairSteps.astro";
+import CommonIssues from "../components/sections/CommonIssues.astro";
+import ServicesFull from "../components/sections/ServicesFull.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import Reviews from "../components/sections/Reviews.astro";
+import CTA from "../components/sections/CTA.astro";
+
+const title = "نمایندگی تعمیرات ایسوس در تهران";
+const description =
+  "تعمیرات تخصصی لپ‌تاپ، تبلت، موبایل و مانیتور ایسوس در تهران با قطعات اورجینال، گارانتی کتبی، پیک رایگان و اعلام هزینه قبل از تعمیر.";
+
+const canonical = SITE.url + "/";
+
+// ✅ Schema: WebSite + LocalBusiness + FAQPage
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url: SITE.url,
+    inLanguage: SITE.locale,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone,
+    areaServed: SITE.areasServed,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE.addressCentral.street,
+      addressLocality: SITE.addressCentral.city,
+      addressRegion: SITE.addressCentral.region,
+      postalCode: SITE.addressCentral.postalCode,
+      addressCountry: SITE.addressCentral.country,
+    },
+    openingHoursSpecification: SITE.hours.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: `https://schema.org/${h.day}`,
+      opens: h.opens,
+      closes: h.closes,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "هزینه تعمیرات چطور مشخص می‌شود؟",
+        acceptedAnswer: { "@type": "Answer", text: "بعد از بررسی اولیه دستگاه، هزینه دقیق اعلام می‌شود و فقط با تایید شما تعمیر انجام می‌گردد." },
+      },
+      {
+        "@type": "Question",
+        name: "گارانتی تعمیرات دارید؟",
+        acceptedAnswer: { "@type": "Answer", text: "بله، تمام تعمیرات همراه با گارانتی کتبی تحویل می‌شود." },
+      },
+      {
+        "@type": "Question",
+        name: "پیک رایگان شامل کدام مناطق است؟",
+        acceptedAnswer: { "@type": "Answer", text: "تمامی نقاط تهران شامل ارسال و دریافت با پیک رایگان است." },
+      },
+      {
+        "@type": "Question",
+        name: "چقدر زمان می‌برد؟",
+        acceptedAnswer: { "@type": "Answer", text: "بسته به نوع خرابی، زمان دقیق بعد از عیب‌یابی اعلام می‌شود. اولویت ما سریع‌ترین زمان ممکن است." },
+      },
+    ],
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <Hero />
+  <Features />
+  <ServicesTeaser />
+  <Coverage />
+  <RepairSteps />
+  <CommonIssues />
+  
+  <FAQ />
+  <Reviews />
+  <CTA />
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site";
+
+const title = "تماس با ما";
+const description =
+  "برای ثبت سفارش تعمیرات ایسوس در تهران تماس بگیرید. پیک رایگان، اعلام هزینه قبل از تعمیر و گارانتی کتبی.";
+
+const canonical = SITE.url + "/contact";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: title,
+    url: canonical,
+    inLanguage: SITE.locale,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE.addressCentral.street,
+      addressLocality: SITE.addressCentral.city,
+      addressRegion: SITE.addressCentral.region,
+      postalCode: SITE.addressCentral.postalCode,
+      addressCountry: SITE.addressCentral.country,
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.phone,
+        contactType: "customer service",
+        availableLanguage: ["Persian", "fa"],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <h1 class="text-2xl font-extrabold md:text-4xl">تماس با ما</h1>
+    <p class="mt-4 text-slate-300 leading-relaxed">
+      برای مشاوره و ثبت سفارش تعمیرات ایسوس، از طریق تماس یا واتساپ در ارتباط باشید. پیک رایگان در تمامی مناطق تهران.
+    </p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      <div class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <div class="text-base font-semibold">تماس سریع</div>
+        <div class="mt-4 space-y-3">
+          <a class="block rounded-2xl bg-white/10 px-4 py-3 hover:bg-white/15 transition" href={`tel:${SITE.phone}`}>
+            تماس: {SITE.phoneDisplay}
+          </a>
+          <a class="block rounded-2xl bg-white/10 px-4 py-3 hover:bg-white/15 transition" href={SITE.whatsapp}>
+            واتساپ
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+        <div class="text-base font-semibold">شعب حضوری</div>
+        <div class="mt-4 space-y-4 text-sm text-slate-300">
+          <div>
+            <div class="font-semibold text-slate-100">شعبه مرکزی (مطهری)</div>
+            <div class="mt-1">{SITE.addressCentral.street}</div>
+          </div>
+          <div>
+            <div class="font-semibold text-slate-100">شعبه غرب (سعادت‌آباد)</div>
+            <div class="mt-1">{SITE.addressWest.street}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-3xl border border-white/10 bg-slate-950/40 p-6">
+      <div class="text-base font-semibold">ساعات کاری</div>
+      <ul class="mt-3 grid gap-2 text-sm text-slate-300 sm:grid-cols-2 lg:grid-cols-3">
+        {SITE.hours.map((h) => (
+          <li class="rounded-2xl border border-white/10 bg-white/5 p-3">
+            {h.day}: {h.opens} - {h.closes}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

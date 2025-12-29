@@ -1,0 +1,26 @@
+---
+const steps = [
+  "سفارش تلفنی",
+  "ثبت سفارش",
+  "دریافت دستگاه",
+  "اعلام هزینه",
+  "تعمیر دستگاه",
+  "تحویل دستگاه با گارانتی کتبی",
+];
+---
+<section class="mt-10">
+  <h2 class="text-xl font-bold md:text-2xl">مراحل تعمیر</h2>
+
+  <ol class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {steps.map((s, i) => (
+      <li class="rounded-3xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-200 font-bold">
+            {i + 1}
+          </span>
+          <div class="font-semibold">{s}</div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

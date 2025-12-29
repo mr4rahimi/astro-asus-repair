@@ -1,0 +1,23 @@
+---
+const features = [
+  { title: "گارانتی تعمیرات", desc: "تحویل دستگاه همراه با گارانتی کتبی معتبر." },
+  { title: "قطعات اورجینال", desc: "استفاده از قطعات اصلی و باکیفیت." },
+  { title: "سریع‌ترین زمان", desc: "اولویت‌بندی تعمیرات و زمان‌بندی شفاف." },
+  { title: "مناسب‌ترین قیمت", desc: "قیمت‌گذاری منصفانه و اعلام هزینه قبل از تعمیر." },
+];
+---
+<section class="mt-10">
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="text-xl font-bold md:text-2xl">چرا ما؟</h2>
+    <p class="text-sm text-slate-300">مزیت‌های کلیدی نمایندگی تعمیرات ایسوس</p>
+  </div>
+
+  <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {features.map((f) => (
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-5 hover:bg-white/7 transition">
+        <div class="text-base font-semibold">{f.title}</div>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">{f.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>

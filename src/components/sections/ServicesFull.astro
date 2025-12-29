@@ -1,0 +1,39 @@
+---
+const services = [
+  {
+    title: "تعمیر لپ‌تاپ ایسوس",
+    desc:
+      "عیب‌یابی برد، تعمیرات نرم‌افزاری، تعویض قطعات، سرویس و بهینه‌سازی. مناسب برای مشکلات تصویر، شارژ، داغی، کندی و روشن نشدن.",
+  },
+  {
+    title: "تعمیر تبلت و موبایل ایسوس",
+    desc:
+      "تعویض باتری، سوکت شارژ، صفحه نمایش، مشکلات نرم‌افزاری، آب‌خوردگی و سایر ایرادات رایج با قطعات اصلی.",
+  },
+  {
+    title: "تعمیر مانیتور ایسوس",
+    desc:
+      "رفع مشکل تصویر، بک‌لایت، پیکسل سوخته، اتصالات و برد تغذیه. تست کامل قبل از تحویل و ارائه گارانتی.",
+  },
+];
+---
+<section id="services" class="mt-10 scroll-mt-24">
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="text-xl font-bold md:text-2xl">خدمات تخصصی</h2>
+    <a class="text-sm text-slate-300 hover:text-white transition" href="/services">جزئیات بیشتر در صفحه خدمات</a>
+  </div>
+
+  <div class="mt-5 grid gap-4 md:grid-cols-3">
+    {services.map((s) => (
+      <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/7 transition">
+        <div class="text-base font-semibold">{s.title}</div>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">{s.desc}</p>
+        <div class="mt-5">
+          <a class="inline-flex rounded-2xl border border-white/15 px-4 py-2 text-sm hover:border-white/30 transition" href="/contact">
+            مشاوره و ثبت سفارش
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

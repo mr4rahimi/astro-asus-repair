@@ -1,0 +1,21 @@
+---
+import { SITE } from "../../config/site";
+---
+<section class="mt-10 rounded-3xl border border-white/10 bg-gradient-to-b from-emerald-500/15 to-transparent p-6 md:p-8">
+  <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h2 class="text-xl font-bold md:text-2xl">برای تعمیر دستگاه ایسوس آماده‌ای؟</h2>
+      <p class="mt-2 text-sm text-slate-300">همین الان تماس بگیر یا در واتساپ پیام بده.</p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <a class="rounded-2xl bg-emerald-500 px-5 py-3 text-center font-semibold text-slate-950 hover:bg-emerald-400 transition"
+         href={`tel:${SITE.phone}`}>
+        تماس فوری
+      </a>
+      <a class="rounded-2xl border border-white/15 px-5 py-3 text-center font-semibold text-white hover:border-white/30 transition"
+         href={SITE.whatsapp}>
+        واتساپ
+      </a>
+    </div>
+  </div>
+</section>
