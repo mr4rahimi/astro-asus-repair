@@ -3,6 +3,11 @@
 ```sh
 npm create astro@latest -- --template basics
 ```
+Fast & SEO friendly repair website built with Astro 🚀
+
+## Screenshots
+![Page speed](/Capture.JPG)
+![Hpme Page](/AsusSiteCapture.JPG)
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
